@@ -20,6 +20,7 @@ public:
             case 0b0010111: return RVInstr::ADD;
             case 0b1101111: return RVInstr::JAL;
             case 0b1100111: return RVInstr::JALR;
+            case 0b1110011: return RVInstr::ECALL;
 
             case 0b0010011: {
                 // I-Type
@@ -30,7 +31,7 @@ public:
                 case 0b011: return RVInstr::SLTIU;
                 case 0b100: return RVInstr::XORI;
                 case 0b110: return RVInstr::ORI;
-                case 0b111: return RVInstr::SLLI;
+                case 0b111: return RVInstr::ANDI;
                 case 0b001: return RVInstr::SLLI;
                 case 0b101: {
                     switch (instr.uValue() >> 25) {
