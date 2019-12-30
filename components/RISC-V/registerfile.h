@@ -51,6 +51,15 @@ public:
     OUTPUTPORT(r1_out, RV_REG_WIDTH);
     OUTPUTPORT(r2_out, RV_REG_WIDTH);
 
+    VSRTL_VT_U getRegister(unsigned i) { return readMem<false>(&m_memory, i); }
+
+    std::vector<VSRTL_VT_U> getRegisters() {
+        std::vector<VSRTL_VT_U> regs;
+        for (int i = 0; i < RV_REGS; i++)
+            regs.push_back(getRegister(i));
+        return regs;
+    }
+
 private:
     std::unordered_map<VSRTL_VT_U, uint8_t> m_memory;
 };
