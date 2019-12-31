@@ -185,6 +185,8 @@ public:
                 case RVInstr::BEQ: case RVInstr::BNE: case RVInstr::BLT:
                 case RVInstr::BGE: case RVInstr::BLTU: case RVInstr::BGEU:
                     return ALUOp::ADD;
+                case RVInstr::SUB:
+                    return ALUOp::SUB;
                 case RVInstr::SLT: case RVInstr::SLTI:
                     return ALUOp::LT;
                 case RVInstr::SLTU: case RVInstr::SLTIU:

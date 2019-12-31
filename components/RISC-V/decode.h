@@ -17,7 +17,7 @@ public:
             // clang-format off
             switch(l7) {
             case 0b0110111: return RVInstr::LUI;
-            case 0b0010111: return RVInstr::ADD;
+            case 0b0010111: return RVInstr::AUIPC;
             case 0b1101111: return RVInstr::JAL;
             case 0b1100111: return RVInstr::JALR;
             case 0b1110011: return RVInstr::ECALL;
